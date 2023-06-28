@@ -11,7 +11,7 @@ function App() {
   //use effects
   useEffect(() => {
     const getUsers = async () => {
-      const { data } = await axios.get("http://localhost:8000/api/tasks");
+      const { data } = await axios.get("https://company-list.onrender.com/api/tasks");
       setCompanies(data.tasks);
     };
 
@@ -21,9 +21,9 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const status = false;
-    await axios.post("http://localhost:8000/api/tasks", { name, location});
+    await axios.post("https://company-list.onrender.com/api/tasks", { name, location});
     // Refresh the tasks after submission
-    const { data } = await axios.get("http://localhost:8000/api/tasks");
+    const { data } = await axios.get("https://company-list.onrender.com/api/tasks");
     setCompanies(data.tasks);
     // Clear the input fields
 

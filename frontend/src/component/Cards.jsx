@@ -13,13 +13,13 @@ const Cards = ({id, title, description, backgroundColor}) => {
   //handle delete
   const handleDelete = async (e) => {
     e.preventDefault();
-    await axios.delete(`http://localhost:8000/api/task/${id}`);
+    await axios.delete(`https://company-list.onrender.com/api/task/${id}`);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setEdit(false);
-    const {data} = await axios.put(`http://localhost:8000/api/task/${id}`, { name: titleNew, location: descriptionNew});
+    const {data} = await axios.put(`https://company-list.onrender.com/api/task/${id}`, { name: titleNew, location: descriptionNew});
     // Refresh the tasks after submission
     console.log(data)
     // setTests(data.tasks);
